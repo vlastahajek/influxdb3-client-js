@@ -1,9 +1,8 @@
 {
-  "name": "@lakehouse-rs/flight-sql-client",
+  "name": "flight-sql-client",
   "version": "0.0.10",
   "description": "A FlightSQL client for  Node.js",
   "main": "index.js",
-  "repository": "https://github.com/roeap/flight-sql-client-node.git",
   "license": "MIT",
   "keywords": [
     "napi-rs",
@@ -50,23 +49,22 @@
     "format:rs": "cargo fmt",
     "lint": "eslint . -c ./.eslintrc.yml",
     "prepublishOnly": "napi prepublish -t npm",
-    "test": "ava",
+    "test": "mocha",
     "version": "napi version",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "clean": "napi clean"
   },
   "dependencies": {
     "apache-arrow": "^14.0.1"
   },
   "devDependencies": {
-    "@ava/typescript": "^4.1.0",
     "@napi-rs/cli": "^2.14.6",
     "@swc-node/register": "^1.5.5",
     "@swc/core": "^1.3.32",
     "@taplo/cli": "^0.5.2",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "ava": "^5.1.1",
     "benny": "^3.7.1",
     "chalk": "^5.2.0",
     "eslint": "^8.33.0",
@@ -89,22 +87,6 @@
     "*.toml": [
       "taplo format"
     ]
-  },
-  "ava": {
-    "require": [
-      "@swc-node/register"
-    ],
-    "timeout": "2m",
-    "workerThreads": false,
-    "environmentVariables": {
-      "TS_NODE_PROJECT": "./tsconfig.json"
-    },
-    "typescript": {
-      "rewritePaths": {
-        "src/": "build/"
-      },
-      "compile": false
-    }
   },
   "prettier": {
     "printWidth": 120,

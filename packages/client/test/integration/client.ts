@@ -1,5 +1,5 @@
 import {InfluxDBClient} from '../../src'
-import { ClientOptions, createFlightSqlClient } from '@lakehouse-rs/flight-sql-client';
+import { ClientOptions, createFlightSqlClient } from 'flight-sql-client';
 import {Data, RecordBatchReader, Struct, tableFromIPC} from 'apache-arrow';
 
 /*
@@ -28,8 +28,9 @@ describe('benchmark', () => {
             console.log(`running - ${query}`);
 
             let totalTime = 0;
-            const arr = [];
-            for (let i = 0; i < 5; i++) {
+
+            for (let i = 0; i < limit; i++) {
+                const arr = [];
                 const start = Date.now();
                 try {
                     const result = await client.query(query);
@@ -38,6 +39,9 @@ describe('benchmark', () => {
                     for await (const val of result) {
                         arr.push(val);
                     }
+                    console.log(`Rows: ${arr.length}`);
+                    console.log('Row 0: ', arr[0]);
+                    console.log(`Row ${arr.length-1}: `, arr[arr.length-1]);
                 } catch (error) {
                     console.error('Error executing query:', error);
                 }
@@ -50,10 +54,7 @@ describe('benchmark', () => {
             }
             console.log(`avg time: ${(totalTime / 5).toFixed(6)}s`);
         }
-        var limit : number = 0;
-
-
-
+        var limit : number = 1;
         for (let n = 1; n <= 2; n += 500) {
             await run(queryLong, limit);
             await new Promise((resolve) => setTimeout(resolve, 10000));
@@ -61,10 +62,7 @@ describe('benchmark', () => {
     }).timeout(300_000)
     it('query data Flight Recordbatchreader', async () => {
         const options: ClientOptions = {
-            tls: true,
-            //host: DB_HOST,
-            host: "us-east-1-1.aws.cloud2.influxdata.com",
-            port: 443,
+            host: DB_HOST,
             token: DB_TOKEN,
             headers: [{key: "database", value: DB_DB}],
         };
@@ -110,13 +108,14 @@ describe('benchmark', () => {
 
             let totalTime = 0;
 
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < limit; i++) {
                 const arr = [];
                 const start = Date.now();
                 try {
                     const result = await runQuery(query);
                     //const result = await client.queryPoints(query);
                     console.log(`reading start`)
+
                     for await (const val of result) {
                         arr.push(val);
                     }
@@ -133,7 +132,7 @@ describe('benchmark', () => {
             }
             console.log(`avg time: ${(totalTime / 5).toFixed(6)}s`);
         }
-        var limit : number = 0;
+        var limit : number = 1;
         for (let n = 1; n <= 2; n += 500) {
             await run(queryLong, limit);
             await new Promise((resolve) => setTimeout(resolve, 10000));
@@ -143,10 +142,8 @@ describe('benchmark', () => {
     }).timeout(300_000)
     it('query data Flight tablefromIpc', async () => {
         const options: ClientOptions = {
-            tls: true,
             //host: DB_HOST,
             host: "us-east-1-1.aws.cloud2.influxdata.com",
-            port: 443,
             token: DB_TOKEN,
             headers: [{key: "database", value: DB_DB}],
         };
@@ -214,10 +211,8 @@ describe('benchmark', () => {
     }).timeout(300_000)
     it('query data table', async () => {
         const options: ClientOptions = {
-            tls: true,
             //host: DB_HOST,
             host: "us-east-1-1.aws.cloud2.influxdata.com",
-            port: 443,
             token: DB_TOKEN,
             headers: [{key: "database", value: DB_DB}],
         };
@@ -225,9 +220,10 @@ describe('benchmark', () => {
         const client = await createFlightSqlClient(options);
         // console.log("executing query");
 
-        const runQuery = async (query: string) : Promise<Array<Array<string>>> => {
+        const runQuery = async (query: string) : Promise<Buffer> => {
             // const start = Date.now();
-            const table = await client.queryTable(query);
+            //const table = await client.queryTable(query);
+            const table = await client.query(query);
             //const after = Date.now();
             //console.log("converting to table");
 
@@ -248,7 +244,7 @@ describe('benchmark', () => {
             // //console.log(table);
             // console.log(`table schema: ${table.schema}`);
             // console.log(`rows:  ${rows.length}`);
-            return table.rows;
+            return table;
         }
 
         const run = async (query: string, limit: number) => {

@@ -4,8 +4,7 @@
   "workspaces": {
     "packages": [
       "packages/client",
-      "packages/client-browser",
-      "packages/flight-sql-client"
+      "packages/client-browser"
     ]
   },
   "scripts": {

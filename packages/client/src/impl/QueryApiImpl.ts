@@ -1,73 +1,28 @@
 import {RecordBatchReader, Type as ArrowType} from 'apache-arrow'
-import QueryApi, {QParamType} from '../QueryApi'
-import {Ticket} from '../generated/flight/Flight'
-import {FlightServiceClient} from '../generated/flight/Flight.client'
-import {ConnectionOptions, QueryOptions, QueryType} from '../options'
-import {createInt32Uint8Array} from '../util/common'
-import {RpcMetadata, RpcOptions} from '@protobuf-ts/runtime-rpc'
-import {impl} from './implSelector'
+import QueryApi from '../QueryApi'
+import {ConnectionOptions, QueryOptions} from '../options'
 import {PointFieldType, PointValues} from '../PointValues'
 import {allParamsMatched, queryHasParams} from '../util/sql'
-import {CLIENT_LIB_USER_AGENT} from './version'
+import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from 'flight-sql-client';
 
-export type TicketDataType = {
-  database: string
-  sql_query: string
-  query_type: QueryType
-  params?: {[name: string]: QParamType | undefined}
-}
 
 export default class QueryApiImpl implements QueryApi {
   private _closed = false
-  private _flightClient: FlightServiceClient
-  private _transport: ReturnType<typeof impl.queryTransport>
+  private _flightClient: FlightSqlClient
+  private _clientOptions: ClientOptions
+  //private _defaultHeaders: Record<string, string> | undefined
 
-  private _defaultHeaders: Record<string, string> | undefined
+  constructor(private _options: ConnectionOptions)  {
+    const {host, token, database} = this._options
+    //this._defaultHeaders = this._options.headers
+    //const clopts : ClientOptions = {
+    this._clientOptions = {
+      host: host,
+      token: token,
+      headers: [{key: "database", value: database}] as KeyValue[],
+    };
+    //this._clientOptions = clopts;
 
-  constructor(private _options: ConnectionOptions) {
-    const {host, queryTimeout: timeout} = this._options
-    this._defaultHeaders = this._options.headers
-    this._transport = impl.queryTransport({host, timeout})
-    this._flightClient = new FlightServiceClient(this._transport)
-  }
-
-  prepareTicket(
-    database: string,
-    query: string,
-    options: QueryOptions
-  ): Ticket {
-    const ticketData: TicketDataType = {
-      database: database,
-      sql_query: query,
-      query_type: options.type,
-    }
-
-    if (options.params) {
-      const param: {[name: string]: QParamType | undefined} = {}
-      for (const key of Object.keys(options.params)) {
-        if (options.params[key]) {
-          param[key] = options.params[key]
-        }
-      }
-      ticketData['params'] = param as {[name: string]: QParamType | undefined}
-    }
-
-    return Ticket.create({
-      ticket: new TextEncoder().encode(JSON.stringify(ticketData)),
-    })
-  }
-
-  prepareMetadata(headers?: Record<string, string>): RpcMetadata {
-    const meta: RpcMetadata = {
-      'User-Agent': CLIENT_LIB_USER_AGENT,
-      ...this._defaultHeaders,
-      ...headers,
-    }
-
-    const token = this._options.token
-    if (token) meta['authorization'] = `Bearer ${token}`
-
-    return meta
   }
 
   private async *_queryRawBatches(
@@ -75,6 +30,9 @@ export default class QueryApiImpl implements QueryApi {
     database: string,
     options: QueryOptions
   ) {
+    if(this._flightClient === undefined) {
+      this._flightClient = await createFlightSqlClient(this._clientOptions)
+    }
     if (options.params && queryHasParams(query)) {
       allParamsMatched(query, options.params)
     }
@@ -84,28 +42,10 @@ export default class QueryApiImpl implements QueryApi {
     }
     const client = this._flightClient
 
-    const ticket = this.prepareTicket(database, query, options) // queryType, queryParams)
-
-    const meta = this.prepareMetadata(options.headers)
-    const rpcOptions: RpcOptions = {meta}
-    const getStart = Date.now();
-    const flightDataStream = client.doGet(ticket, rpcOptions)
-    const getEnd = Date.now();
-    console.log(`get time: ${getEnd - getStart}ms`);
-    const start = Date.now();
-    const binaryStream = (async function* () {
-      for await (const flightData of flightDataStream.responses) {
-        // Include the length of dataHeader for the reader.
-        yield createInt32Uint8Array(flightData.dataHeader.length)
-        yield flightData.dataHeader
-        // Length of dataBody is already included in dataHeader.
-        yield flightData.dataBody
-      }
-    })()
+    const binaryStream = await client.query(query)
 
     const reader = await RecordBatchReader.from(binaryStream)
-    const end = Date.now();
-    console.log(`record batch reader time: ${end - start}ms`);
+    //console.log(`record batch reader time: ${end - start}ms`);
     yield* reader
   }
 
@@ -186,6 +126,6 @@ export default class QueryApiImpl implements QueryApi {
 
   async close(): Promise<void> {
     this._closed = true
-    this._transport.close?.()
+    //this._transport.close?.()
   }
 }

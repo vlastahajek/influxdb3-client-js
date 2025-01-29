@@ -88,11 +88,11 @@
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.9.9",
-    "@lakehouse-rs/flight-sql-client": "^0.0.10",
     "@protobuf-ts/grpc-transport": "^2.9.1",
     "@protobuf-ts/grpcweb-transport": "^2.9.1",
     "@protobuf-ts/runtime-rpc": "^2.9.1",
     "apache-arrow": "^18.0.0",
-    "grpc-web": "^1.5.0"
+    "grpc-web": "^1.5.0",
+    "flight-sql-client": "file:../../lib/flight-sql-client"
   }
 }
