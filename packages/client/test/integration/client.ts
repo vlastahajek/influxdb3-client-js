@@ -1,6 +1,6 @@
 import {InfluxDBClient} from '../../src'
-import { ClientOptions, createFlightSqlClient } from 'flight-sql-client';
-import {Data, RecordBatchReader, Struct, tableFromIPC} from 'apache-arrow';
+//import { ClientOptions, createFlightSqlClient } from 'flight-sql-client';
+//import {Data, RecordBatchReader, Struct, tableFromIPC} from 'apache-arrow';
 
 /*
 const DB_HOST = process.env.HOST;
@@ -60,7 +60,7 @@ describe('benchmark', () => {
             await new Promise((resolve) => setTimeout(resolve, 10000));
         }
     }).timeout(300_000)
-    it('query data Flight Recordbatchreader', async () => {
+   /* it('query data Flight Recordbatchreader', async () => {
         const options: ClientOptions = {
             host: DB_HOST,
             token: DB_TOKEN,
@@ -278,9 +278,5 @@ describe('benchmark', () => {
             await new Promise((resolve) => setTimeout(resolve, 10000));
         }
     }).timeout(300_000)
-
-})
-
-describe('flight-sql-client', () => {
-
+*/
 })

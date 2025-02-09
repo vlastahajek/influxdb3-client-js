@@ -1,5 +1,5 @@
 {
-  "name": "@lakehouse-rs/flight-sql-client-freebsd-x64",
+  "name": "@vlasta-hajek/flight-sql-client-freebsd-x64",
   "version": "0.0.8",
   "os": ["freebsd"],
   "cpu": ["x64"],

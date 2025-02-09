@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@influxdata/influxdb3-client-browser": "link:../../packages/client-browser"
+    "@vlastahajek/influxdb3-client-browser": "link:../../packages/client-browser"
   },
   "devDependencies": {
     "typescript": "^5.0.2",

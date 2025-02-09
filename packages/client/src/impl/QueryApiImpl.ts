@@ -1,52 +1,15 @@
-import {RecordBatchReader, Type as ArrowType} from 'apache-arrow'
+import { Type as ArrowType} from 'apache-arrow'
 import QueryApi from '../QueryApi'
 import {ConnectionOptions, QueryOptions} from '../options'
 import {PointFieldType, PointValues} from '../PointValues'
-import {allParamsMatched, queryHasParams} from '../util/sql'
-import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from 'flight-sql-client';
+import {impl, QueryProvider} from "./implSelector";
 
 
 export default class QueryApiImpl implements QueryApi {
-  private _closed = false
-  private _flightClient: FlightSqlClient
-  private _clientOptions: ClientOptions
-  //private _defaultHeaders: Record<string, string> | undefined
+  private _queryProvider: QueryProvider
 
   constructor(private _options: ConnectionOptions)  {
-    const {host, token, database} = this._options
-    //this._defaultHeaders = this._options.headers
-    //const clopts : ClientOptions = {
-    this._clientOptions = {
-      host: host,
-      token: token,
-      headers: [{key: "database", value: database}] as KeyValue[],
-    };
-    //this._clientOptions = clopts;
-
-  }
-
-  private async *_queryRawBatches(
-    query: string,
-    database: string,
-    options: QueryOptions
-  ) {
-    if(this._flightClient === undefined) {
-      this._flightClient = await createFlightSqlClient(this._clientOptions)
-    }
-    if (options.params && queryHasParams(query)) {
-      allParamsMatched(query, options.params)
-    }
-
-    if (this._closed) {
-      throw new Error('queryApi: already closed!')
-    }
-    const client = this._flightClient
-
-    const binaryStream = await client.query(query)
-
-    const reader = await RecordBatchReader.from(binaryStream)
-    //console.log(`record batch reader time: ${end - start}ms`);
-    yield* reader
+    this._queryProvider = impl.queryProvider(this._options)
   }
 
   async *query(
@@ -54,7 +17,7 @@ export default class QueryApiImpl implements QueryApi {
     database: string,
     options: QueryOptions
   ): AsyncGenerator<Record<string, any>, void, void> {
-    const batches = this._queryRawBatches(query, database, options)
+    const batches = this._queryProvider.queryRawBatches(query, database, options)
     const start = Date.now();
     for await (const batch of batches) {
       const row: Record<string, any> = {}
@@ -75,7 +38,7 @@ export default class QueryApiImpl implements QueryApi {
     database: string,
     options: QueryOptions
   ): AsyncGenerator<PointValues, void, void> {
-    const batches = this._queryRawBatches(query, database, options)
+    const batches = this._queryProvider.queryRawBatches(query, database, options)
 
     for await (const batch of batches) {
       for (let rowIndex = 0; rowIndex < batch.numRows; rowIndex++) {
@@ -125,7 +88,7 @@ export default class QueryApiImpl implements QueryApi {
   }
 
   async close(): Promise<void> {
-    this._closed = true
+    //this._closed = true
     //this._transport.close?.()
   }
 }

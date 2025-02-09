@@ -1,7 +1,7 @@
 {
-  "name": "flight-sql-client",
+  "name": "influxdb3-js-flight-sql-client",
   "version": "0.0.10",
-  "description": "A FlightSQL client for  Node.js",
+  "description": "A Rust Flight SQL client for  InfluxDB 3 JS client",
   "main": "index.js",
   "license": "MIT",
   "keywords": [
@@ -15,7 +15,7 @@
     "index.d.ts"
   ],
   "napi": {
-    "name": "flight-sql-client",
+    "name": "influxdb3-js-flight-sql-client",
     "triples": {
       "defaults": true,
       "additional": [
@@ -101,13 +101,13 @@
     "@lakehouse-rs/flight-sql-client-android-arm64": "0.0.10",
     "@lakehouse-rs/flight-sql-client-darwin-arm64": "0.0.10",
     "@lakehouse-rs/flight-sql-client-darwin-x64": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-freebsd-x64": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-freebsd-x64": "0.0.7",
     "@lakehouse-rs/flight-sql-client-linux-arm-gnueabihf": "0.0.10",
     "@lakehouse-rs/flight-sql-client-linux-arm64-gnu": "0.0.10",
     "@lakehouse-rs/flight-sql-client-linux-arm64-musl": "0.0.10",
     "@lakehouse-rs/flight-sql-client-linux-x64-gnu": "0.0.10",
     "@lakehouse-rs/flight-sql-client-linux-x64-musl": "0.0.10",
     "@lakehouse-rs/flight-sql-client-win32-ia32-msvc": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-win32-x64-msvc": "0.0.10"
+    "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc": "0.0.1"
   }
 }

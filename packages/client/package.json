@@ -1,6 +1,6 @@
 {
-  "name": "@influxdata/influxdb3-client",
-  "version": "0.12.0",
+  "name": "@vlastahajek/influxdb3-client",
+  "version": "0.0.1",
   "description": "The Client that provides a simple and convenient way to interact with InfluxDB 3.",
   "scripts": {
     "apidoc:extract": "api-extractor run",
@@ -42,10 +42,10 @@
       "require": "./dist/index.js"
     }
   },
-  "homepage": "https://github.com/InfluxCommunity/influxdb3-js",
+  "homepage": "https://github.com/vlastahajek/influxdb3-client-js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/InfluxCommunity/influxdb3-js",
+    "url": "git+https://github.com/vlastahajek/influxdb3-client-js",
     "directory": "packages/client"
   },
   "keywords": [
@@ -93,6 +93,6 @@
     "@protobuf-ts/runtime-rpc": "^2.9.1",
     "apache-arrow": "^18.0.0",
     "grpc-web": "^1.5.0",
-    "flight-sql-client": "file:../../lib/flight-sql-client"
+    "influxdb3-js-flight-sql-client": "link:../../lib/flight-sql-client"
   }
 }
