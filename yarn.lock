@@ -1588,19 +1588,6 @@
     "@typescript-eslint/types" "8.21.0"
     eslint-visitor-keys "^4.2.0"
 
-"@vlastahajek/influxdb3-client@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@vlastahajek/influxdb3-client/-/influxdb3-client-0.0.1.tgz#1433b536837990b92545dd2afa22ef19afd6403f"
-  integrity sha512-YJrqd4UNN7URB1B9fRAzgTuyQ1jXs+M3iQ9hRwjE39kKYPQ0ARIymhQ/aAv7c9OOJHldpsqEo38+/xAwL1qbzQ==
-  dependencies:
-    "@grpc/grpc-js" "^1.9.9"
-    "@protobuf-ts/grpc-transport" "^2.9.1"
-    "@protobuf-ts/grpcweb-transport" "^2.9.1"
-    "@protobuf-ts/runtime-rpc" "^2.9.1"
-    apache-arrow "^18.0.0"
-    grpc-web "^1.5.0"
-    influxdb3-js-flight-sql-client "link:../../../Users/vlast/AppData/Local/Yarn/Cache/v6/npm-@vlastahajek-influxdb3-client-0.0.1-1433b536837990b92545dd2afa22ef19afd6403f-integrity/node_modules/lib/flight-sql-client"
-
 "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc@0.0.1":
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc/-/influxdb3-js-flight-sql-client-win32-x64-msvc-0.0.1.tgz#0da37352c68090a9bbcd2745bf8513a0abf58916"
@@ -3493,27 +3480,10 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-"influxdb3-js-flight-sql-client@file:lib/flight-sql-client":
+"influxdb3-js-flight-sql-client@file:packages/client/lib/flight-sql-client":
   version "0.0.10"
   dependencies:
     apache-arrow "^14.0.1"
-  optionalDependencies:
-    "@lakehouse-rs/flight-sql-client-android-arm-eabi" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-android-arm64" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-darwin-arm64" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-darwin-x64" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-freebsd-x64" "0.0.7"
-    "@lakehouse-rs/flight-sql-client-linux-arm-gnueabihf" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-linux-arm64-gnu" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-linux-arm64-musl" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-linux-x64-gnu" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-linux-x64-musl" "0.0.10"
-    "@lakehouse-rs/flight-sql-client-win32-ia32-msvc" "0.0.10"
-    "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc" "0.0.1"
-
-"influxdb3-js-flight-sql-client@link:../../lib/flight-sql-client":
-  version "0.0.0"
-  uid ""
 
 inherits@2, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.3:
   version "2.0.4"

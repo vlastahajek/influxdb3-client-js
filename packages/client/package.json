@@ -93,6 +93,20 @@
     "@protobuf-ts/runtime-rpc": "^2.9.1",
     "apache-arrow": "^18.0.0",
     "grpc-web": "^1.5.0",
-    "influxdb3-js-flight-sql-client": "file:../../lib/flight-sql-client"
+    "influxdb3-js-flight-sql-client": "file:lib/flight-sql-client"
+  },
+  "optionalDependencies": {
+    "@lakehouse-rs/flight-sql-client-android-arm-eabi": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-android-arm64": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-darwin-arm64": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-darwin-x64": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-freebsd-x64": "0.0.7",
+    "@lakehouse-rs/flight-sql-client-linux-arm-gnueabihf": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-linux-arm64-gnu": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-linux-arm64-musl": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-linux-x64-gnu": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-linux-x64-musl": "0.0.10",
+    "@lakehouse-rs/flight-sql-client-win32-ia32-msvc": "0.0.10",
+    "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc": "0.0.1"
   }
 }

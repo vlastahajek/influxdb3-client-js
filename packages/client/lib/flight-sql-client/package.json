@@ -95,19 +95,5 @@
     "singleQuote": true,
     "arrowParens": "always"
   },
-  "packageManager": "yarn@3.6.3",
-  "optionalDependencies": {
-    "@lakehouse-rs/flight-sql-client-android-arm-eabi": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-android-arm64": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-darwin-arm64": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-darwin-x64": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-freebsd-x64": "0.0.7",
-    "@lakehouse-rs/flight-sql-client-linux-arm-gnueabihf": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-linux-arm64-gnu": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-linux-arm64-musl": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-linux-x64-gnu": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-linux-x64-musl": "0.0.10",
-    "@lakehouse-rs/flight-sql-client-win32-ia32-msvc": "0.0.10",
-    "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc": "0.0.1"
-  }
+  "packageManager": "yarn@3.6.3"
 }
