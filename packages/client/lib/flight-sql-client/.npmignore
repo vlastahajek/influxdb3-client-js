@@ -5,4 +5,9 @@ build
 nmp
 target
 *.node
-ts
+nmp
+src
+.*
+yarn.*
+Cargo.*
+tsconfig.json

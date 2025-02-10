@@ -1,7 +1,7 @@
 import {RecordBatchReader} from 'apache-arrow'
 import {ConnectionOptions, QueryOptions} from '../../options'
 import {allParamsMatched, queryHasParams} from '../../util/sql'
-import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from 'influxdb3-js-flight-sql-client';
+import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from '../../../lib/flight-sql-client';
 import {QueryProvider} from "../implSelector";
 
 
