@@ -624,15 +624,15 @@
     yargs-parser "21.1.1"
 
 "@microsoft/api-documenter@^7.22.21":
-  version "7.26.5"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.26.5.tgz#8166910abfcc6cd514c57c9061dd484c1a19dcda"
-  integrity sha512-E1V8FIHd1ePefbvCZoQfusBPMyKqIq/VqgfJGeZKjOYluwQMlZEgJT18t0XH8zPMO5/rB/PWAVkv4fKrsnoYjw==
+  version "7.26.7"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.26.7.tgz#695bf9bc0816bea6278d7de9f020a34a83dbc075"
+  integrity sha512-VruYlHYAhQfuBNyndvyD9GBmCRWSOZ8D9+eXicygycNPMC/SPM71WWu2OwP98CTBvq/OhG/uRvUGGdL4QvgiFQ==
   dependencies:
-    "@microsoft/api-extractor-model" "7.30.2"
+    "@microsoft/api-extractor-model" "7.30.3"
     "@microsoft/tsdoc" "~0.15.1"
-    "@rushstack/node-core-library" "5.10.2"
-    "@rushstack/terminal" "0.14.5"
-    "@rushstack/ts-command-line" "4.23.3"
+    "@rushstack/node-core-library" "5.11.0"
+    "@rushstack/terminal" "0.14.6"
+    "@rushstack/ts-command-line" "4.23.4"
     js-yaml "~3.13.1"
     resolve "~1.22.1"
 
@@ -644,6 +644,15 @@
     "@microsoft/tsdoc" "~0.15.1"
     "@microsoft/tsdoc-config" "~0.17.1"
     "@rushstack/node-core-library" "5.10.2"
+
+"@microsoft/api-extractor-model@7.30.3":
+  version "7.30.3"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.30.3.tgz#d1256b6955c8c2a1115e0cfe99e1e8f9802e52cc"
+  integrity sha512-yEAvq0F78MmStXdqz9TTT4PZ05Xu5R8nqgwI5xmUmQjWBQ9E6R2n8HB/iZMRciG4rf9iwI2mtuQwIzDXBvHn1w==
+  dependencies:
+    "@microsoft/tsdoc" "~0.15.1"
+    "@microsoft/tsdoc-config" "~0.17.1"
+    "@rushstack/node-core-library" "5.11.0"
 
 "@microsoft/api-extractor@^7.36.0":
   version "7.49.1"
@@ -1259,6 +1268,20 @@
     resolve "~1.22.1"
     semver "~7.5.4"
 
+"@rushstack/node-core-library@5.11.0":
+  version "5.11.0"
+  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-5.11.0.tgz#8ceb980f3a591e1254167bb5ffdc200d1893b783"
+  integrity sha512-I8+VzG9A0F3nH2rLpPd7hF8F7l5Xb7D+ldrWVZYegXM6CsKkvWc670RlgK3WX8/AseZfXA/vVrh0bpXe2Y2UDQ==
+  dependencies:
+    ajv "~8.13.0"
+    ajv-draft-04 "~1.0.0"
+    ajv-formats "~3.0.1"
+    fs-extra "~11.3.0"
+    import-lazy "~4.0.0"
+    jju "~1.4.0"
+    resolve "~1.22.1"
+    semver "~7.5.4"
+
 "@rushstack/rig-package@0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@rushstack/rig-package/-/rig-package-0.5.3.tgz#ea4d8a3458540b1295500149c04e645f23134e5d"
@@ -1275,12 +1298,30 @@
     "@rushstack/node-core-library" "5.10.2"
     supports-color "~8.1.1"
 
+"@rushstack/terminal@0.14.6":
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/@rushstack/terminal/-/terminal-0.14.6.tgz#a58a6bbbd1dead6c0701960b583645f10e5577ec"
+  integrity sha512-4nMUy4h0u5PGXVG71kEA9uYI3l8GjVqewoHOFONiM6fuqS51ORdaJZ5ZXB2VZEGUyfg1TOTSy88MF2cdAy+lqA==
+  dependencies:
+    "@rushstack/node-core-library" "5.11.0"
+    supports-color "~8.1.1"
+
 "@rushstack/ts-command-line@4.23.3":
   version "4.23.3"
   resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.23.3.tgz#a42fe413159c0f3f2c57afdceedf91a5b75c2d67"
   integrity sha512-HazKL8fv4HMQMzrKJCrOrhyBPPdzk7iajUXgsASwjQ8ROo1cmgyqxt/k9+SdmrNLGE1zATgRqMUH3s/6smbRMA==
   dependencies:
     "@rushstack/terminal" "0.14.5"
+    "@types/argparse" "1.0.38"
+    argparse "~1.0.9"
+    string-argv "~0.3.1"
+
+"@rushstack/ts-command-line@4.23.4":
+  version "4.23.4"
+  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.23.4.tgz#f04c04f039621c47e25793d551e67300cd0dfcba"
+  integrity sha512-pqmzDJCm0TS8VyeqnzcJ7ncwXgiLDQ6LVmXXfqv2nPL6VIz+UpyTpNVfZRJpyyJ+UDxqob1vIj2liaUfBjv8/A==
+  dependencies:
+    "@rushstack/terminal" "0.14.6"
     "@types/argparse" "1.0.38"
     argparse "~1.0.9"
     string-argv "~0.3.1"
@@ -3065,7 +3106,7 @@ fs-constants@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs-constants/-/fs-constants-1.0.0.tgz#6be0de9be998ce16af8afc24497b9ee9b7ccd9ad"
   integrity sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==
 
-fs-extra@^11.1.1, fs-extra@^11.2.0:
+fs-extra@^11.1.1, fs-extra@^11.2.0, fs-extra@~11.3.0:
   version "11.3.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-11.3.0.tgz#0daced136bbaf65a555a326719af931adc7a314d"
   integrity sha512-Z4XaCL6dUDHfP/jT25jJKMmtxvuwbkrD1vNSMFlo9lNLY2c5FHYSQgHPRZUjAB26TpDEoW9HCOgplrdbaPV/ew==
