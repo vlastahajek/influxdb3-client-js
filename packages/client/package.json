@@ -1,6 +1,6 @@
 {
   "name": "@vlastahajek/influxdb3-client",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "The Client that provides a simple and convenient way to interact with InfluxDB 3.",
   "scripts": {
     "apidoc:extract": "api-extractor run",
@@ -93,6 +93,6 @@
     "@protobuf-ts/runtime-rpc": "^2.9.1",
     "apache-arrow": "^18.0.0",
     "grpc-web": "^1.5.0",
-    "influxdb3-js-flight-sql-client": "link:../../lib/flight-sql-client"
+    "influxdb3-js-flight-sql-client": "file:../../lib/flight-sql-client"
   }
 }

@@ -10,6 +10,7 @@ doc
 reports
 yarn-error.log
 .idea/
+.yarn/
 /temp
 /docs
 flightgen
