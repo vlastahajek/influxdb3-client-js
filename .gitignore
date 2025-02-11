@@ -16,3 +16,4 @@ yarn-error.log
 flightgen
 packages/client/README.md
 examples/*/.env
+*.node

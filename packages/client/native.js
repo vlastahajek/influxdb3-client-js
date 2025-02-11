@@ -13,6 +13,7 @@ let nativeBinding = null;
 let localFileExisted = false;
 let loadError = null;
 
+
 function isMusl() {
   // For Node 10
   if (!process.report || typeof process.report.getReport !== 'function') {
@@ -27,6 +28,11 @@ function isMusl() {
     return !glibcVersionRuntime;
   }
 }
+
+if(platform === 'browser') {
+   return 0;
+}
+console.log("Runing native.js for platform: " + platform)
 
 switch (platform) {
   case 'android':

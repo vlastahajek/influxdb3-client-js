@@ -19,6 +19,7 @@ export default defineConfig({
   dts: false,
   minify,
   target: ['es2018'],
+  external: ['native', /.*\.node$/],
   platform: 'browser',
   splitting: false,
   define: {
@@ -27,6 +28,7 @@ export default defineConfig({
   esbuildOptions(options, {format}) {
     options.outdir = undefined
     options.outfile = outFiles[format]
+    options.external = ['native', '/.*\.node$/']
     if (format === 'cjs') {
       // esbuild does not generate UMD format OOTB, see https://github.com/evanw/esbuild/issues/507
       // the following code is a trick to generate UMD output in place of cjs

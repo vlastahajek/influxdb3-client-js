@@ -1,7 +1,7 @@
 import {RecordBatchReader} from 'apache-arrow'
 import {ConnectionOptions, QueryOptions} from '../../options'
 import {allParamsMatched, queryHasParams} from '../../util/sql'
-import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from '../../../lib/flight-sql-client';
+import {ClientOptions, createFlightSqlClient, FlightSqlClient, KeyValue} from '../../../native';
 import {QueryProvider} from "../implSelector";
 
 

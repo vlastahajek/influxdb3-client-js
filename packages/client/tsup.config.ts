@@ -15,11 +15,13 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   minify,
   target: ['es2018'],
+  external: ['native', /.*\.node$/],
   platform: 'node',
   splitting: false,
   esbuildOptions(options, {format}) {
     options.outdir = undefined
     options.outfile = outFiles[format]
+    options.external = ['native', '/.*\.node$/']
   },
   define: {
     'process.env.BUILD_BROWSER': 'false',

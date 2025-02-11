@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@75lb/deep-merge@^1.1.1":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@75lb/deep-merge/-/deep-merge-1.1.2.tgz#6aa53d9730e64a159075da65d3bd057abfe1dde0"
-  integrity sha512-08K9ou5VNbheZFxM5tDWoqjA3ImC50DiuuJ2tj1yEPRfkp8lLLg6XAaJ4On+a0yAXor/8ay5gHnAIshRM44Kpw==
-  dependencies:
-    lodash "^4.17.21"
-    typical "^7.1.1"
-
 "@ampproject/remapping@^2.2.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.3.0.tgz#ed441b6fa600072520ce18b43d2c8cc8caecc7f4"
@@ -1421,20 +1413,10 @@
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.3.20.tgz#cb291577ed342ca92600430841a00329ba05cecc"
   integrity sha512-/pC9HAB5I/xMlc5FP77qjCnI16ChlJfW0tGa0IUcFn38VJrTV6DeZ60NU5KZBtaOZqjdpwTWohz5HU1RrhiYxQ==
 
-"@types/command-line-args@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@types/command-line-args/-/command-line-args-5.2.0.tgz#adbb77980a1cc376bb208e3f4142e907410430f6"
-  integrity sha512-UuKzKpJJ/Ief6ufIaIzr3A/0XnluX7RvFgwkV89Yzvm77wCh1kFaFmqN8XEnGcN62EuHdedQjEMb8mYxFLGPyA==
-
 "@types/command-line-args@^5.2.3":
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/@types/command-line-args/-/command-line-args-5.2.3.tgz#553ce2fd5acf160b448d307649b38ffc60d39639"
   integrity sha512-uv0aG6R0Y8WHZLTamZwtfsDLVRnOa+n+n5rEvFWL5Na5gZ8V2Teab/duDPFzIIIhs9qizDpcavCusCLJZu62Kw==
-
-"@types/command-line-usage@5.0.2":
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/@types/command-line-usage/-/command-line-usage-5.0.2.tgz#ba5e3f6ae5a2009d466679cc431b50635bf1a064"
-  integrity sha512-n7RlEEJ+4x4TS7ZQddTmNSxP+zziEG0TNsMfiRIxcIVXt71ENJ9ojeXmGO3wPoTdn7pJcU2xc3CJYMktNT6DPg==
 
 "@types/command-line-usage@^5.0.4":
   version "5.0.4"
@@ -1466,11 +1448,6 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-10.0.10.tgz#91f62905e8d23cbd66225312f239454a23bebfa0"
   integrity sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==
 
-"@types/node@20.3.0":
-  version "20.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.0.tgz#719498898d5defab83c3560f45d8498f58d11938"
-  integrity sha512-cumHmIAf6On83X7yP+LrsEyUOf/YlociZelmpRYaGFydoaPdxdt80MAbu6vWerQT2COCp2nPvHdsbD7tHn/YlQ==
-
 "@types/node@>=13.7.0", "@types/node@^22":
   version "22.10.10"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.10.tgz#85fe89f8bf459dc57dfef1689bd5b52ad1af07e6"
@@ -1489,11 +1466,6 @@
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.4.tgz#56e2cc26c397c038fab0e3a917a12d5c5909e901"
   integrity sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==
-
-"@types/pad-left@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@types/pad-left/-/pad-left-2.1.1.tgz#17d906fc75804e1cc722da73623f1d978f16a137"
-  integrity sha512-Xd22WCRBydkGSApl5Bw0PhAOHKSVjNL3E3AwzKaps96IMraPqy5BvZIsBVK6JLwdybUzjHnuWVwpDd0JjTfHXA==
 
 "@types/sinon@^17.0.0":
   version "17.0.3"
@@ -1587,6 +1559,32 @@
   dependencies:
     "@typescript-eslint/types" "8.21.0"
     eslint-visitor-keys "^4.2.0"
+
+"@vlastahajek/influxdb3-client@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@vlastahajek/influxdb3-client/-/influxdb3-client-0.0.4.tgz#a8d7336456127177ba639abf8f8ebaff5e4d1595"
+  integrity sha512-9aPtFa/soFzLJillqe4jN/cBOtAqips7hrp2bwkk7YOXLz3kV8OzOSGspC/iAUf5Ng/LkkEf9lj5D1tGXHIgHw==
+  dependencies:
+    "@grpc/grpc-js" "^1.9.9"
+    "@protobuf-ts/grpc-transport" "^2.9.1"
+    "@protobuf-ts/grpcweb-transport" "^2.9.1"
+    "@protobuf-ts/runtime-rpc" "^2.9.1"
+    apache-arrow "^18.0.0"
+    grpc-web "^1.5.0"
+    influxdb3-js-flight-sql-client "file:../../../Users/vlast/AppData/Local/Yarn/Cache/v6/npm-@vlastahajek-influxdb3-client-0.0.4-a8d7336456127177ba639abf8f8ebaff5e4d1595-integrity/node_modules/@vlastahajek/influxdb3-client/lib/flight-sql-client"
+  optionalDependencies:
+    "@lakehouse-rs/flight-sql-client-android-arm-eabi" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-android-arm64" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-darwin-arm64" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-darwin-x64" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-freebsd-x64" "0.0.7"
+    "@lakehouse-rs/flight-sql-client-linux-arm-gnueabihf" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-linux-arm64-gnu" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-linux-arm64-musl" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-linux-x64-gnu" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-linux-x64-musl" "0.0.10"
+    "@lakehouse-rs/flight-sql-client-win32-ia32-msvc" "0.0.10"
+    "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc" "0.0.1"
 
 "@vlastahajek/influxdb3-js-flight-sql-client-win32-x64-msvc@0.0.1":
   version "0.0.1"
@@ -1754,22 +1752,6 @@ anymatch@~3.1.2:
   dependencies:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
-
-apache-arrow@^14.0.1:
-  version "14.0.2"
-  resolved "https://registry.yarnpkg.com/apache-arrow/-/apache-arrow-14.0.2.tgz#737f7b8211ef99a2c137dcc9d2001b469efb0344"
-  integrity sha512-EBO2xJN36/XoY81nhLcwCJgFwkboDZeyNQ+OPsG7bCoQjc2BT0aTyH/MR6SrL+LirSNz+cYqjGRlupMMlP1aEg==
-  dependencies:
-    "@types/command-line-args" "5.2.0"
-    "@types/command-line-usage" "5.0.2"
-    "@types/node" "20.3.0"
-    "@types/pad-left" "2.1.1"
-    command-line-args "5.2.1"
-    command-line-usage "7.0.1"
-    flatbuffers "23.5.26"
-    json-bignum "^0.0.3"
-    pad-left "^2.1.0"
-    tslib "^2.5.3"
 
 apache-arrow@^18.0.0:
   version "18.1.0"
@@ -2237,7 +2219,7 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
-command-line-args@5.2.1, command-line-args@^5.2.1:
+command-line-args@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/command-line-args/-/command-line-args-5.2.1.tgz#c44c32e437a57d7c51157696893c5909e9cec42e"
   integrity sha512-H4UfQhZyakIjC74I9d34fGYDwk3XpSr17QhEd0Q3I9Xq1CETHo4Hcuo87WyWHpAF1aSLjLRf5lD9ZGX2qStUvg==
@@ -2247,17 +2229,7 @@ command-line-args@5.2.1, command-line-args@^5.2.1:
     lodash.camelcase "^4.3.0"
     typical "^4.0.0"
 
-command-line-usage@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/command-line-usage/-/command-line-usage-7.0.1.tgz#e540afef4a4f3bc501b124ffde33956309100655"
-  integrity sha512-NCyznE//MuTjwi3y84QVUGEOT+P5oto1e1Pk/jFPVdPPfsG03qpTIl3yw6etR+v73d0lXsoojRpvbru2sqePxQ==
-  dependencies:
-    array-back "^6.2.2"
-    chalk-template "^0.4.0"
-    table-layout "^3.0.0"
-    typical "^7.1.1"
-
-command-line-usage@^7.0.0, command-line-usage@^7.0.1:
+command-line-usage@^7.0.1:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/command-line-usage/-/command-line-usage-7.0.3.tgz#6bce992354f6af10ecea2b631bfdf0c8b3bfaea3"
   integrity sha512-PqMLy5+YGwhMh1wS04mVG44oqDsgyLRSKJBdOo1bnYhMKBW65gZF1dRp2OZRhiTjgUHljy99qkO7bsctLaw35Q==
@@ -3003,11 +2975,6 @@ flat@^5.0.2:
   resolved "https://registry.yarnpkg.com/flat/-/flat-5.0.2.tgz#8ca6fe332069ffa9d324c327198c598259ceb241"
   integrity sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==
 
-flatbuffers@23.5.26:
-  version "23.5.26"
-  resolved "https://registry.yarnpkg.com/flatbuffers/-/flatbuffers-23.5.26.tgz#01358e272a61239f0faf3bfbe4e014f3ace9d746"
-  integrity sha512-vE+SI9vrJDwi1oETtTIFldC/o9GsVKRM+s6EL0nQgxXlYV1Vc4Tk30hj4xGICftInKQKj1F3up2n8UbIVobISQ==
-
 flatbuffers@^24.3.25:
   version "24.12.23"
   resolved "https://registry.yarnpkg.com/flatbuffers/-/flatbuffers-24.12.23.tgz#6eea59d2bcda0c5d59bcacefd6216348b3086883"
@@ -3480,10 +3447,8 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-"influxdb3-js-flight-sql-client@file:packages/client/lib/flight-sql-client":
-  version "0.0.10"
-  dependencies:
-    apache-arrow "^14.0.1"
+"influxdb3-js-flight-sql-client@file:lib/flight-sql-client":
+  version "0.0.0"
 
 inherits@2, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.3:
   version "2.0.4"
@@ -5058,13 +5023,6 @@ pacote@^18.0.0, pacote@^18.0.6:
     ssri "^10.0.0"
     tar "^6.1.11"
 
-pad-left@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/pad-left/-/pad-left-2.1.0.tgz#16e6a3b2d44a8e138cb0838cc7cb403a4fc9e994"
-  integrity sha512-HJxs9K9AztdIQIAIa/OIazRAUW/L6B9hbQDxO4X07roW3eo9XqZc2ur9bn1StH9CnbbI9EgvejHQX7CBpCF1QA==
-  dependencies:
-    repeat-string "^1.5.4"
-
 parent-module@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/parent-module/-/parent-module-1.0.1.tgz#691d2709e78c79fae3a156622452d00762caaaa2"
@@ -5473,11 +5431,6 @@ release-zalgo@^1.0.0:
   dependencies:
     es6-error "^4.0.1"
 
-repeat-string@^1.5.4:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
-  integrity sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==
-
 require-directory@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
@@ -5842,11 +5795,6 @@ ssri@^10.0.0, ssri@^10.0.6:
   dependencies:
     minipass "^7.0.3"
 
-stream-read-all@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/stream-read-all/-/stream-read-all-3.0.1.tgz#60762ae45e61d93ba0978cda7f3913790052ad96"
-  integrity sha512-EWZT9XOceBPlVJRrYcykW8jyRSZYbkb/0ZK36uLEmoWVO5gxBOnntNTseNzfREsqxqdfEGQrD8SXQ3QWbBmq8A==
-
 string-argv@~0.3.1:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.3.2.tgz#2b6d0ef24b656274d957d54e0a4bbf6153dc02b6"
@@ -5964,19 +5912,6 @@ synckit@^0.9.1:
   dependencies:
     "@pkgr/core" "^0.1.0"
     tslib "^2.6.2"
-
-table-layout@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/table-layout/-/table-layout-3.0.2.tgz#69c2be44388a5139b48c59cf21e73b488021769a"
-  integrity sha512-rpyNZYRw+/C+dYkcQ3Pr+rLxW4CfHpXjPDnG7lYhdRoUcZTUt+KEsX+94RGp/aVp/MQU35JCITv2T/beY4m+hw==
-  dependencies:
-    "@75lb/deep-merge" "^1.1.1"
-    array-back "^6.2.2"
-    command-line-args "^5.2.1"
-    command-line-usage "^7.0.0"
-    stream-read-all "^3.0.1"
-    typical "^7.1.1"
-    wordwrapjs "^5.1.0"
 
 table-layout@^4.1.0:
   version "4.1.1"
@@ -6164,7 +6099,7 @@ tslib@2.4.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
 
-tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0, tslib@^2.5.3, tslib@^2.6.2, tslib@^2.8.0:
+tslib@^2.1.0, tslib@^2.3.0, tslib@^2.4.0, tslib@^2.6.2, tslib@^2.8.0:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
