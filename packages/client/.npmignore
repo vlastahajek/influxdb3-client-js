@@ -2,13 +2,12 @@ node_modules
 build
 coverage
 doc
-lib
 .rpt2_cache
 .DS_Store
 .nyc_output
 *.lcov
 reports
-yarn-error.log
+*.log
 /tsconfig.*
 /tsup.*
 /.prettierrc.json
@@ -16,3 +15,6 @@ yarn-error.log
 /test
 .nycrc
 *.node
+rust
+npm
+native.*
