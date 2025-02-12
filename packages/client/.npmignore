@@ -15,4 +15,4 @@ yarn-error.log
 /src
 /test
 .nycrc
-
+*.node

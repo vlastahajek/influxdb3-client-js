@@ -5,8 +5,8 @@
 
 /** A ':' separated key value pair */
 export interface KeyValue {
-  key: string;
-  value: string;
+  key: string
+  value: string
 }
 export interface ClientOptions {
   /**
@@ -14,18 +14,23 @@ export interface ClientOptions {
    *
    * Values should be key value pairs separated by ':'
    */
-  headers: Array<KeyValue>;
+  headers: Array<KeyValue>
   /** Username */
-  username?: string;
+  username?: string
   /** Password */
-  password?: string;
+  password?: string
   /** Auth token. */
-  token?: string;
+  token?: string
   /** Server host. */
-  host: string;
+  host: string
 }
-export declare function createFlightSqlClient(options: ClientOptions): Promise<FlightSqlClient>;
-export declare function rustCrateVersion(): string;
+export declare function createFlightSqlClient(
+  options: ClientOptions
+): Promise<FlightSqlClient>
+export declare function rustCrateVersion(): string
 export declare class FlightSqlClient {
-  query(query: string, params?: Array<[string, string]> | undefined | null): Promise<Buffer>;
+  query(
+    query: string,
+    params?: Array<[string, string]> | undefined | null
+  ): Promise<Buffer>
 }
