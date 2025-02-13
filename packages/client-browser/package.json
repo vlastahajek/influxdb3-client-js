@@ -1,6 +1,6 @@
 {
   "name": "@vlastahajek/influxdb3-client-browser",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "InfluxDB 3 client for browser",
   "scripts": {
     "apidoc:extract": "echo \"Nothing to do\"",
