@@ -1,4 +1,4 @@
-import {InfluxDBClient, Point} from '@influxdata/influxdb3-client-browser'
+import {InfluxDBClient, Point} from '@vlastahajek/influxdb3-client-browser'
 
 import * as view from './view'
 import {EXAMPLE_QUERIES, measurement} from './exampleQueries'
@@ -46,7 +46,12 @@ const host = '/influx' // vite proxy
 
 // This query type can either be 'sql' or 'influxql'
 
-const client = new InfluxDBClient({host, token})
+let client : InfluxDBClient
+try {
+  client = new InfluxDBClient({host, token})
+} catch (e: any) {
+  alert(e)
+}
 
 /*********** Influxdb write ***********/
 
