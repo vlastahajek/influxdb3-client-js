@@ -4,5 +4,5 @@ build
 .DS_Store
 .nyc_output
 *.lcov
-yarn-error.log
-
+*.log
+native.*
