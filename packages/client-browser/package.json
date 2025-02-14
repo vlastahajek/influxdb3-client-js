@@ -47,7 +47,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@vlastahajek/influxdb3-client": "^0.0.4",
+    "@vlastahajek/influxdb3-client": "^0.0.9",
     "cpr": "^3.0.1",
     "rimraf": "^5.0.0"
   }
