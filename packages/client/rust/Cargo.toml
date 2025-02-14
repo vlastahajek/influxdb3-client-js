@@ -1,7 +1,7 @@
 [package]
-authors = ["Robert Pack <robstar.pack@gmail.com>"]
+authors = ["InfluxData"]
 edition = "2021"
-name    = "flight-sql-client-node"
+name    = "flight-sql-client"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
