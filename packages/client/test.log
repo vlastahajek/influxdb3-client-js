@@ -1,4 +1,0 @@
-c:\Program Files\nodejs\node.exe" C:\git\influxdb3-js\node_modules\mocha\bin\mocha.js --ui bdd --reporter "C:\Users\vlast\AppData\Local\Programs\IntelliJ IDEA Ultimate\plugins\nodeJS\js\mocha-intellij\lib\mochaIntellijReporter.js" C:\git\influxdb3-js\packages\client\test\integration\client.ts --grep "^benchmark "
-Plain JS:               avg time: 17.655800s
-Rust query batchreader: avg time: 2.216400s
-Rust query tablefromIpc:avg time: 2.145400s
