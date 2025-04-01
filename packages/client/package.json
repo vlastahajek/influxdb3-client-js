@@ -93,7 +93,7 @@
     "@types/sinon": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.1",
-    "chai": "^4.2.0",
+    "chai": "^5.2.0",
     "esbuild": "^0.24.0",
     "esbuild-runner": "^2.2.1",
     "eslint": "^9.10.0",
